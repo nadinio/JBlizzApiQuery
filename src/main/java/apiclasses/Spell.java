@@ -12,6 +12,7 @@ public class Spell {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer spellId;
     private String name;
     private String icon;
     @Column(columnDefinition = "VARCHAR(512)")
@@ -23,6 +24,7 @@ public class Spell {
 
     public Spell(int id, String name, String icon, String description, String s_range, String castTime){
         this.id = id;
+        this.spellId = id;
         this.name = name;
         this.icon = icon;
         this.description = description;
@@ -76,6 +78,14 @@ public class Spell {
 
     public void setCastTime(String castTime) {
         this.castTime = castTime;
+    }
+
+    public Integer getSpellId() {
+        return spellId;
+    }
+
+    public void setSpellId(Integer spellId) {
+        this.spellId = spellId;
     }
 
     @Override
