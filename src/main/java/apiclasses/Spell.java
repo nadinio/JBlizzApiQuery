@@ -2,14 +2,35 @@ package apiclasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Spell {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String icon;
     private String description;
-    private String range;
+    private String s_range;
     private String castTime;
+
+    public Spell(){}
+
+    public Spell(int id, String name, String icon, String description, String s_range, String castTime){
+        this.id = id;
+        this.name = name;
+        this.icon = icon;
+        this.description = description;
+        this.s_range = s_range;
+        this.castTime = castTime;
+    }
 
     public int getId() {
         return id;
@@ -44,11 +65,11 @@ public class Spell {
     }
 
     public String getRange() {
-        return range;
+        return s_range;
     }
 
-    public void setRange(String range) {
-        this.range = range;
+    public void setRange(String s_range) {
+        this.s_range = s_range;
     }
 
     public String getCastTime() {
@@ -66,7 +87,7 @@ public class Spell {
                 ", name=" + name +
                 ", icon=" + icon +
                 ", description=" + description +
-                ", range=" + range +
+                ", range=" + s_range +
                 ", castTime=" + castTime + "}";
     }
 }
