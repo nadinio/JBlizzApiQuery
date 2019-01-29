@@ -17,18 +17,18 @@ public class main {
 
         ArrayList<Spell> spells = new ArrayList<>();
 
-        for(int i = 1; i < 1000; i++){
+        for(int i = 1; spells.size() < 1000; i++){
             try {
                 Spell spell = template.getForObject("https://us.api.blizzard.com/wow/spell/" + (17000 + i) + "?locale=en_US&access_token=" + ApiConstants.ACCESS_TOKEN, Spell.class);
                 spells.add(spell);
             } catch (HttpClientErrorException ex){
-                log.error(ex.getStatusCode().toString());
                 if(ex.getStatusCode().toString().contains("404"))
                 {
                     continue;
                 } else {
                     log.error(ex.toString());
                     log.error(ex.getStackTrace().toString());
+                    continue;
                 }
 
             }

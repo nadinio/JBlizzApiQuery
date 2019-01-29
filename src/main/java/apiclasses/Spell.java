@@ -2,10 +2,7 @@ package apiclasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -17,6 +14,7 @@ public class Spell {
     private Integer id;
     private String name;
     private String icon;
+    @Column(columnDefinition = "VARCHAR(512)")
     private String description;
     private String s_range;
     private String castTime;
