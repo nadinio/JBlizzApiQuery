@@ -1,4 +1,4 @@
-package apiclasses;
+package apiclasses.wow.community;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

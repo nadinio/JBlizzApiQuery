@@ -1,4 +1,5 @@
-import apiclasses.Spell;
+import apiclasses.ApiConstants;
+import apiclasses.wow.community.Spell;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class main {
         for(int i = 1; spells.size() < 1000; i++){
             try {
                 Spell spell = template.getForObject("https://us.api.blizzard.com/wow/spell/" + (17000 + i) + "?locale=en_US&access_token=" + ApiConstants.ACCESS_TOKEN, Spell.class);
+                spell.setSpellId(spell.getId());
                 spells.add(spell);
             } catch (HttpClientErrorException ex){
                 if(ex.getStatusCode().toString().contains("404"))
