@@ -1,5 +1,5 @@
 import apiclasses.ApiConstants;
-import apiclasses.wow.community.Spell;
+import apiclasses.wow.community.spell.Spell;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

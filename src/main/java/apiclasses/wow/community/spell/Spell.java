@@ -1,4 +1,4 @@
-package apiclasses.wow.community;
+package apiclasses.wow.community.spell;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

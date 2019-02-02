@@ -1,8 +1,9 @@
-package apiclasses.wow.community;
+package apiclasses.wow.community.spell;
 
+import apiclasses.ApiConstants;
+import apiclasses.wow.community.spell.Spell;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
-import apiclasses.ApiConstants;
 
 import static org.junit.Assert.assertEquals;
 
